@@ -34,6 +34,23 @@ npx skills add alchaincyf/huashu-flash
 7. 胆子、品味、方向，这三件事交给人
 8. 最终对比必须配对测（两个版本交替跑），上线由你批准
 
+## 闪电怎么干活
+
+<table>
+<tr>
+<td width="50%"><img src="assets/steps/01-handoff.png" alt="把网站交给闪电" /><br/><b>1. 把网站交给闪电</b><br/>告诉它哪几个页面最重要、什么叫「能用」</td>
+<td width="50%"><img src="assets/steps/02-measure.png" alt="先量一量" /><br/><b>2. 先量</b><br/>冷缓存、限速、测 10 次取 p75，拆开首屏时间花在哪</td>
+</tr>
+<tr>
+<td><img src="assets/steps/03-climb.png" alt="爬山" /><br/><b>3. 爬山</b><br/>找能数的指标，先证明它跟体感挂钩，再一步步往下压</td>
+<td><img src="assets/steps/04-ratchet.png" alt="拧紧棘轮" /><br/><b>4. 拧紧棘轮</b><br/>赢下来的写进基准，只许变好不许变差</td>
+</tr>
+<tr>
+<td><img src="assets/steps/05-guardrails.png" alt="守住护栏" /><br/><b>5. 守住护栏</b><br/>黄金测试、视觉回归、功能冒烟、SEO 字段一个都不许变</td>
+<td><img src="assets/steps/06-ship.png" alt="网站飞起来" /><br/><b>6. 交差</b><br/>新旧版本交替配对测量，确认真的变快，你批准后上线</td>
+</tr>
+</table>
+
 附带两个脚本：`scripts/bench.py`（冷缓存下测「打开到能用」，支持网络与 CPU 限速、真打一个字确认能输入、A/B 交替配对）和 `scripts/ratchet.py`（测出来的数只许降不许升）。
 
 ## 实战：我们拿它给自己的 4 个网站提速
@@ -62,6 +79,7 @@ npx skills add alchaincyf/huashu-flash
 ```
 huashu-flash/
 ├── SKILL.md                         # 八个步骤、测量纪律、「别这样」清单
+├── assets/                          # 闪电吉祥物与流程插图
 ├── references/
 │   ├── measurement-protocol.md      # 测量口径、CrUX、首屏拆解、确定性计数
 │   ├── playbook.md                  # 招式库，每招标注出处（原文／通用／实测）
