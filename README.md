@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/flash-mascot.png" alt="闪电：一只抱着闪电飞驰的树懒" width="640" />
+
 # 闪电.skill · huashu-flash
 
 **只要 Claude 能把一件事量出来，它就能把这件事变快。**
