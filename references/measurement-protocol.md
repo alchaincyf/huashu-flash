@@ -45,6 +45,8 @@ curl -s "https://www.googleapis.com/pagespeedinsights/v5/runPagespeed?url=<URL>&
 
 流量小的站可能没有 CrUX 数据，如实写「没有」，不要拿 Lighthouse 分数顶替真实用户数据。
 
+**量线上之前先量一个对照站**。从自己电脑上 curl 或用浏览器量线上，数字里混着测量机自己的网络：走代理、跨境、公司网关，都会让所有网站的首字节时间一起变慢。做法是同一时间把一个公认很快的站（比如 vercel.com，或者同一家托管商的官网）一起量，拿到的数和你的站差不多，就说明慢在你这边的网络，不在网站。实测踩过：本机经代理访问，所有站的首字节时间都在 1.4 秒上下，连 vercel.com 自己也是，差点把「优化 TTFB」当成了主攻方向。真实用户的首字节时间，以 CrUX 的 TTFB 为准（它把重定向也算在内）。
+
 ## 首屏拆解
 
 在页面里读 `performance.getEntriesByType('resource')`，按 `responseEnd` 排序，标出：
